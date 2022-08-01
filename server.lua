@@ -11,11 +11,23 @@ AddEventHandler('kushc0de:buyCig', function(itemName, itemAmount, itemPrice)
         if xPlayer.canCarryItem(itemName, itemAmount) then
             xPlayer.removeMoney(itemPrice)
             xPlayer.addInventoryItem(itemName, itemAmount)
-            xPlayer.showNotification(_U('success', Config.Currency .. itemPrice))
+            if Config.okokNotify then
+                TriggerClientEvent('okokNotify:Alert', source, _U('notify_title'), _U('success', Config.Currency .. itemPrice), Config.okokNotifyTime, 'success') -- success, info, warning, error, phone, neutral
+            else
+                xPlayer.showNotification(_U('success', Config.Currency .. itemPrice))
+            end
         else
-            xPlayer.showNotification(_U('not_enough_space'))
+            if Config.okokNotify then
+                TriggerClientEvent('okokNotify:Alert', source, _U('notify_title'), _U('not_enough_space'), Config.okokNotifyTime, 'error') -- success, info, warning, error, phone, neutral
+            else
+                xPlayer.showNotification(_U('not_enough_space'))
+            end
         end
     else
-        xPlayer.showNotification(_U('not_enough_money'))
+        if Config.okokNotify then
+            TriggerClientEvent('okokNotify:Alert', source, _U('notify_title'), _U('not_enough_money'), Config.okokNotifyTime, 'error') -- success, info, warning, error, phone, neutral
+        else
+            xPlayer.showNotification(_U('not_enough_money'))
+        end
     end
 end)
