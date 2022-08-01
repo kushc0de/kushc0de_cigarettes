@@ -5,7 +5,8 @@ Rules:
 2. do not sell the script in any case.
 3. if you have suggestions for improvement, let me know.
 
----------------------------------------------------------------------------------------------------------------
+
+
 FAQ
 Q: How to put in a new Item?
 A: Just follow the template. | name -> your itemname | label -> itemname im shop | price -> price per piece
@@ -18,4 +19,3 @@ A: Just put your sign into "Config.Currency = 'YOURSIGN'"
 
 Q: How to contact you?
 A: Discord: kushc0de#7777
----------------------------------------------------------------------------------------------------------------
