@@ -8,7 +8,7 @@ Citizen.CreateThread(function()
 	end
 end)
 
-
+local textshowed = false
 Citizen.CreateThread(function()
 	while true do
 		Wait(0)
@@ -22,12 +22,24 @@ Citizen.CreateThread(function()
 
 			if dist < 1.8 then
 				local loc = vector3(cigStore.x, cigStore.y, cigStore.z + 1.0)     
-				ESX.ShowHelpNotification(_U('helpnotify'))
+				if Config.okokTextUI then
+					if not textshowed then
+						exports['okokTextUI']:Open(_U('info_textui'), Config.okokTextUIcolor, Config.okokTextUIposition)
+						textshowed = true
+					end
+				else
+					ESX.ShowHelpNotification(_U('helpnotify'))
+				end
 				if IsControlJustReleased(0, 38) then
 					OpenShopMenu()
+					if textshowed then
+						exports['okokTextUI']:Close()
+					end
 				end
 			else
 				Citizen.Wait(1500)
+				exports['okokTextUI']:Close()
+				textshowed = false
 			end
 		end
 	end
@@ -42,7 +54,7 @@ function OpenShopMenu(zone)
 			label      = item.label .. " " .. _U('price') .. " " .. Config.Currency .. item.price,
 			name       = item.name,
 			price      = item.price,
-			
+
 			value      = 1,
 			type       = 'slider',
 			min        = 1,
