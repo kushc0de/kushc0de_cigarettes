@@ -8,14 +8,19 @@ Rules:
 
 
 FAQ
+
 Q: How to put in a new Item?
+
 A: Just follow the template. | name -> your itemname | label -> itemname im shop | price -> price per piece
 
 Q: How to add my language?
+
 A: Either you edit the file "de.lua" or you create a new one.
 
 Q: How to change currency?
+
 A: Just put your sign into "Config.Currency = 'YOURSIGN'"
 
 Q: How to contact you?
+
 A: Discord: kushc0de#7777
