@@ -38,8 +38,10 @@ Citizen.CreateThread(function()
 				end
 			else
 				Citizen.Wait(1500)
-				exports['okokTextUI']:Close()
-				textshowed = false
+				if Config.okokTextUI then
+					exports['okokTextUI']:Close()
+					textshowed = false
+				end
 			end
 		end
 	end
