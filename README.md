@@ -11,7 +11,7 @@ FAQ
 
 Q: How to put in a new Item?
 
-A: Just follow the template. | name -> your itemname | label -> itemname im shop | price -> price per piece
+A: Just follow the template. | name -> your itemname | label -> itemname in shop | price -> price per piece
 
 Q: How to add my language?
 
