@@ -23,4 +23,4 @@ A: Just put your sign into "Config.Currency = 'YOURSIGN'"
 
 Q: How to contact you?
 
-A: Discord: kushc0de#7777
+A: Discord: kush.
