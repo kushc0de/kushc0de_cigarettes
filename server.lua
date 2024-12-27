@@ -2,8 +2,7 @@ ESX = exports['es_extended']:getSharedObject()
 
 RegisterNetEvent('kushc0de:buyCig')
 AddEventHandler('kushc0de:buyCig', function(itemName, itemAmount, itemPrice)
-    local _source = source
-    local xPlayer = ESX.GetPlayerFromId(_source)
+    local xPlayer = ESX.GetPlayerFromId(source)
 
     if xPlayer.getAccount('money').money >= itemPrice then
         if xPlayer.canCarryItem(itemName, itemAmount) then
