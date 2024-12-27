@@ -4,8 +4,6 @@ author 'kushc0de'
 
 game 'gta5'
 
-ui_page 'html/index.html'
-
 shared_scripts {
     'config.lua',
 	'@es_extended/locale.lua',
@@ -25,4 +23,3 @@ server_script {
 }
 
 dependency 'es_extended'
-

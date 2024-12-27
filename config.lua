@@ -9,9 +9,8 @@ Config.okokTextUI = false
 Config.okokTextUIcolor = 'darkgrey' -- 	- colors avaiable: lightblue; lightgreen; lightred; lightgrey; darkblue; darkgreen; darkred; darkgrey.
 Config.okokTextUIposition = 'left' -- textui right or left?
 
-Config.Locale = 'en'
+Config.Locale = 'de'
 
 Config.Items = {
     {name = 'marlboro', label = 'Marlboro', price = 111},
 }
-
