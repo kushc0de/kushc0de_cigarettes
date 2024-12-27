@@ -1,6 +1,4 @@
-ESX = nil
-
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+ESX = exports['es_extended']:getSharedObject()
 
 RegisterNetEvent('kushc0de:buyCig')
 AddEventHandler('kushc0de:buyCig', function(itemName, itemAmount, itemPrice)

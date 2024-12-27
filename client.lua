@@ -1,12 +1,6 @@
-ESX = nil
-local stations = {73774428}
+ESX = exports['es_extended']:getSharedObject()
 
-Citizen.CreateThread(function()
-	while ESX == nil do
-	    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-	    Citizen.Wait(0)
-	end
-end)
+local stations = {73774428}
 
 local textshowed = false
 Citizen.CreateThread(function()
@@ -18,10 +12,9 @@ Citizen.CreateThread(function()
 		for i = 1, #stations do
 			local zone = GetClosestObjectOfType(pos.x, pos.y, pos.z, 1.0, stations[i], false, false, false)
 			local cigStore = GetEntityCoords(zone)
-			local dist = GetDistanceBetweenCoords(pos.x, pos.y, pos.z, cigStore.x, cigStore.y, cigStore.z, true)
+			local dist = #(pos-cigStore)
 
 			if dist < 1.8 then
-				local loc = vector3(cigStore.x, cigStore.y, cigStore.z + 1.0)     
 				if Config.okokTextUI then
 					if not textshowed then
 						exports['okokTextUI']:Open(_U('info_textui'), Config.okokTextUIcolor, Config.okokTextUIposition)
